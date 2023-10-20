@@ -1,0 +1,236 @@
+* {
+  margin: 0;
+  padding: 0;
+}
+html {
+    touch-action: manipulation
+}
+body,button,input,label,select,td,textarea {
+  font-family: Helvetica, Arial, sans-serif;
+  font-size: 12px
+}
+h1,h2,h3,h4,h5,h6 {
+  color: #1c1e21;
+  font-size: 13px;
+  font-weight: 600;
+  margin: 0;
+  padding: 0
+}
+h1 {
+  font-size: 14px
+}
+h4,h5,h6 {
+  font-size: 12px
+}
+p {
+  margin: 1em 0
+}
+b,strong {
+  font-weight: 600
+}
+a {
+  color: #385898;
+  cursor: pointer;
+  text-decoration: none
+}
+button {
+  margin: 0
+}
+a:hover {
+  text-decoration: underline
+}
+img {
+  border: 0
+}
+td,td.label {
+  text-align: left
+}
+dd {
+  color: #000
+}
+dt {
+  color: #606770
+}
+ul {
+  list-style-type: none;
+  margin: 0;
+  padding: 0
+}
+abbr {
+  border-bottom: none;
+  text-decoration: none
+}
+hr {
+  background: #dadde1;
+  border-width: 0;
+  color: #dadde1;
+  height: 1px
+}
+div {
+  display: block;
+}
+/* 여기부터 실제 코드의 css 시작 */
+body .body {
+  background: rgb(255, 255, 255);
+  color: #1c1e21;
+  direction: ltr;
+  line-height: 1.34;
+  /* line-height: 18px; */
+  margin: 0;
+  overflow-y: visible;
+  unicode-bidi: embed;
+}
+.full_area {
+  box-sizing: border-box;
+  position: relative;
+  z-index: 0;
+}
+.full_area2 {
+  flex-direction: column;
+  display: flex;
+  position: relative;
+  z-index: 0;
+  min-height: inherit;
+}
+.full_area_start {
+  height: 100%;
+  overflow-y: visible;
+  box-sizing: border-box;
+  display: flex;
+  flex-shrink: 0;
+  position: static;
+  justify-content: space-between;
+  align-items: stretch;
+  flex-direction: row;
+  overflow-x: visible;
+  align-self: auto;
+  flex-grow: 0;
+}
+.left_side {
+  overflow-y: visible;
+  align-content: stretch;
+  position: fixed;
+  width: fit-content;
+  flex-direction: column;
+  box-sizing: border-box;
+  display: flex;
+  flex-shrink: 0;
+  align-items: stretch;
+  overflow-x: visible;
+  align-self: auto;
+  justify-content: flex-start;
+  z-index: 10;
+  height: 100vh;
+  flex-grow: 0;
+}
+.left_position {
+  position: relative;
+  display: flex;
+  justify-content: space-between;
+  flex-direction: row;
+  height: 100dvh;
+  border-right: solid rgb(219, 219, 219) 1px;
+  z-index: 1;
+}
+.left_side_start {
+  transform: translateX(0px);
+  padding: 8px 12px 20px 12px;
+  flex-direction: column;
+  box-sizing: border-box;
+  display: flex;
+  align-items: flex-start;
+}
+.instagram_ui_start {
+  width: 100%;
+  flex-shrink: 0;
+  height: 92px;
+  position: relative;
+}
+.instagram_ui_area {
+  height: 73px;
+  padding: 25px 12px 16px 12px;
+  margin-bottom: 19px;
+  left: 0;
+  top: 0;
+  position: absolute;
+}
+.instagram_ui_box {
+  opacity: 1;
+}
+.instagram_ui_move {
+  text-decoration: none;
+  color: rgb(0, 55, 107);
+  display: inline;
+  touch-action: manipulation;
+  box-sizing: border-box;
+  cursor: pointer;
+  text-align: inherit;
+  list-style: none;
+  outline: none;
+  overflow-y: visible;
+  align-items: center;
+  justify-content: flex-start;
+}
+.instagram_ui_main {
+  align-items: stretch;
+  border: 0;
+  box-sizing: border-box;
+  display: flex;
+  flex-direction: column;
+  flex-shrink: 0;
+  font: inherit;
+  font-size: 100%;
+  margin: 0;
+  margin-top: 7px;
+  padding: 0;
+  position: relative;
+  transition: opacity .1s ease-out;
+  vertical-align: baseline;
+  cursor: pointer;
+  text-align: inherit;
+  list-style: none;
+}
+.instagram_ui_main > img {
+  position: relative;
+  fill: currentcolor;
+  height: 29px;
+  width: 103px;
+  overflow-clip-margin: content-box;
+  overflow: hidden;
+}
+.left_settings_start {
+  width: 100%;
+  flex-grow: 1;
+}
+.left_settings {
+  position: relative;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+@media (min-width: 1264px) and (max-width: 1919px) {
+  .left_side_start{
+    width: 244px;
+  }
+}
+@media (min-width: 1264px) {
+  .left_settings_feature {
+    padding: 12px;
+  }
+}
+@media (min-width: 600px) {
+  .left_settings_feature {
+    margin: 4px 0;
+  }
+}
