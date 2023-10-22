@@ -714,11 +714,44 @@ footer {
   }
   .header__logo {
     display: none;
+    height: auto;
   }
   .icon_items p {
     display: none;
   }
   .small_delete {
+    display: none;
+  }
+  .main__nav {
+    padding: 0;
+    margin: 0;
+    display: flex;
+    justify-content: center;
+    box-sizing: border-box;
+    align-items: center;
+    text-align: center;
+    flex-direction: row;
+    position: relative;
+    border-top: solid 1px rgb(219, 219, 219);
+  }
+  .main__nav > ul > li {
+    flex: 1 1 auto;
+    margin: 0;
+  }
+  .main__nav > ul {
+    cursor: pointer;
+    color: rgb(0, 0, 0);
+    box-sizing: border-box;
+    text-align: center;
+    flex: 1 1 auto;
+    height: 100%;
+  }
+  .main__nav > ul > li > img {
+    width: 24px;
+    height: 24px;
+    margin: 0;
+  }
+  .main__nav > ul > li > a {
     display: none;
   }
 }
