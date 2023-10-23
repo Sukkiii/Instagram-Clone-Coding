@@ -462,7 +462,7 @@ footer {
   list-style: none;
 }
 /* 미디어쿼리 */
-@media (min-width: 1264px) and (max-width: 1919px){
+@media (min-width: 1264px){
   .header__container {
     width: 244px;
   }
@@ -584,6 +584,7 @@ footer {
     font-size: 16px;
     font-weight: 600;
     border-bottom: solid 1px rgb(219, 219, 219);
+    z-index: 200;
   }
   .side_position {
     align-items: center;
@@ -695,8 +696,14 @@ footer {
     margin: 0;
   }
   .left_container {
-    display: flex;
-    flex-direction: row;
+    display: block;
+    width: 100%;
+    position:fixed;
+    background-color: white;
+    border-right: none;
+    border-top: solid 1px rgb(219, 219, 219);
+    bottom: 0;
+    z-index: 105;
   }
   .header__container {
     width: 100%;
@@ -704,7 +711,6 @@ footer {
     display: flex;
     justify-content: space-evenly;
     flex-direction: row;
-    border-top: solid 1px rgb(219, 219, 219);
     margin: 0;
     padding: 0;
   }
@@ -716,6 +722,7 @@ footer {
     display: flex;
     justify-content: space-evenly;
     flex-direction: row;
+    z-index: 110;
   }
   .header__logo {
     display: none;

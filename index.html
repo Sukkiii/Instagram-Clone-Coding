@@ -7,6 +7,10 @@
   <title>Instagram</title>
   <link rel="stylesheet" type="text/css" href="reset.css">
   <link rel="stylesheet" type="text/css" href="index.css">
+  <script defer src="./modal.js"></script>
+  <!-- defer로 로드하는 이유는
+  HTML 문서는 원래 위에서부터 순차적으로 로드하나, defer키워드를 통애 HTML 문서가 전부 load된 다음에 자바스크립트 파일을 load함
+  Modal창은 버튼을 클릭했을 때만 보여지기 때문에 사용자가 자바스크립트 파일을 먼저 load할 필요가 없음 -->
 </head>
 <body>
   <div class="left_container">
@@ -25,7 +29,7 @@
         <div class="icon_items"><img src="./image/video.png" alt="explore_icon"><p>Reels</p></div>
         <div class="icon_items small_delete"><img src="./image/send_icon.svg" alt="send_icon"><p>Messages</p></div>
         <div class="icon_items small_delete"><img src="./image/favorite_icon.svg" alt="favorite_icon"><p>Notifications</p></div>
-        <div class="icon_items"><img src="./image/add_icon.svg" alt="add_icon"><p>Create</p></div>
+        <div class="icon_items add-post"><img src="./image/add_icon.svg" alt="add_icon"><p>Create</p></div>
         <div class="icon_items large_delete"><img src="./image/send_icon.svg" alt="send_icon"></div>
         <div class="icon_items header__avatar">
           <img src="./image/sukki_image.jpeg" alt="sukki_image"><p>Profile</p>
