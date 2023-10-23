@@ -286,7 +286,6 @@ main {
 .story__add > h6 {
   padding-top: 10px;
   font-size: 13px;
-  font-weight: 500;
   width: 87px;
   text-align: center;
 }
@@ -482,6 +481,9 @@ footer {
   .large_delete {
     display: none;
   }
+  .just_small_following {
+    display: none;
+  }
 }
 @media (min-width: 738px) and (max-width: 1264px) {
   .main__main {
@@ -543,6 +545,9 @@ footer {
     display: none;
   }
   .large_delete {
+    display: none;
+  }
+  .just_small_following {
     display: none;
   }
 }
@@ -753,5 +758,83 @@ footer {
   }
   .main__nav > ul > li > a {
     display: none;
+  }
+  .just_small_following {
+    padding: 12px 0;
+    display: flex;
+    border-top: solid 1px rgb(219, 219, 219);
+    flex-direction: row;
+    justify-content: space-around;
+    list-style-type: none;
+  }
+  .just_small_following > li {
+    font-size: 14px;
+    justify-content: center;
+    display: flex;
+    align-items: center;
+    text-align: center;
+    width: 33.3%;
+    list-style-type: none;
+  }
+  .following_span1 {
+    line-height: 18px;
+    font-size: 13px;
+    overflow: visible;
+    font-weight: 400;
+    min-width: 0;
+    margin: 0! important;
+    word-wrap: break-word;
+    word-break: break-word;
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    white-space: pre-line;
+    text-align: center;
+    color: rgb(115, 115, 115);
+    letter-spacing: 0.5px;
+  }
+  .following_span2 {
+    font-weight: 500;
+    color: rgb(0, 0, 0)
+  }
+  .main__story {
+    height: 88px;
+    margin-bottom: 21px;
+    display: block;
+  }
+  .main__story > .story__area {
+    flex-direction: row;
+    height: 100%;
+    overflow-x: auto;
+    overflow-y: hidden;
+  }
+  .story__add {
+    margin: 0 5px;
+    padding-top: 5px;
+    cursor: pointer;
+    width: 72.5px;
+    flex-direction: column;
+    display: flex;
+    align-items: center;
+  }
+  .main__plus {
+    width: 56px;
+    height: 56px;
+    align-self: center;
+    user-select: none;
+    cursor: pointer;
+    margin: 0;
+  }
+  .main__plus > img {
+    display: block;
+    height: 30px;
+    width: 30px;
+    margin: 0;
+  }
+  .story__add > h6 {
+    padding-top: 8px;
+    width: 100%;
+    text-align: center;
+    font-size: 11px;
   }
 }
