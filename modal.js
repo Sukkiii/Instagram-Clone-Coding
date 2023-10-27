@@ -21,16 +21,85 @@ const modal = `
   </div>
   `;
 
-const addPostBtn = document.querySelector(".add-post");
+function createPost(img) {
+  return `
+    <div class="modal_post">
+      <img width="478px" height="478px" src=${img} alt = "image" />
+      <div class="modal_write">
+        <textarea placeholder="문구 입력" autofocus></textarea>
+      </div>
+    </div>
+  `;
+}
 
-addPostBtn.addEventListener("click", () => {
+const addPostBtn = document.querySelector(".add-post");
+addPostBtn.addEventListener("click", createModal);
+
+function createModal() {
   const modalEl = document.createElement("div");
   modalEl.setAttribute("class", "modal_layout");
   modalEl.innerHTML = modal;
-  document.body.prepend(modalEl);
+
+  document.querySelector("body").prepend(modalEl);
 
   const removeBtn = document.querySelector(".modal_close > img");
   removeBtn.addEventListener("click", () => {
-    document.body.removeChild(modalEl);
+    document.querySelector("body").removeChild(modalEl);
   });
-});
+
+  const fileEl = document.querySelector("#file");
+  fileEl.addEventListener("input", () => {
+    let reader = new FileReader();
+    reader.readAsDataURL(fileEl.files[0]);
+    // console.log(fileEl.files[0]);
+    reader.onload = () => {
+      const imageBase64 = reader.result;
+      // console.log(imageBase64);
+      document
+        .querySelector(".modal_card")
+        .setAttribute("class", "modal_card write-post");
+      document
+        .querySelector(".modal_main")
+        .setAttribute("class", "modal_main write-post");
+
+      const backBtn = document.querySelector(".modal_back > img");
+      backBtn.style.visibility = "visible";
+      const shareBtn = document.querySelector(".modal_header > p");
+      shareBtn.style.visibility = "visible";
+
+      document.querySelector(".modal_main").innerHTML = createPost(imageBase64);
+
+      backBtn.addEventListener("click", () => {
+        document.querySelector("body").removeChild(modalEl);
+        createModal();
+      });
+      shareBtn.addEventListener("click", () => {
+        if (window.indexedDB) {
+          const databaseName = "instagram";
+          const version = 1;
+          const request = indexedDB.open(databaseName, version);
+          const data = {
+            content: document.querySelector(".modal_write > textarea").value,
+            image: imageBase64,
+          };
+
+          request.onupgradeneeded = () => {
+            request.result.createObjectStore("posts", { autoIncrement: true });
+          };
+          request.onsuccess = () => {
+            const store = request.result
+              .transaction("posts", "readwrite")
+              .objectStore("posts");
+
+            store.add(data);
+          };
+        }
+      });
+    };
+
+    reader.onerror = (error) => {
+      alert("Error: ", error);
+      document.querySelector("body").removeChild(modalEl);
+    };
+  });
+}

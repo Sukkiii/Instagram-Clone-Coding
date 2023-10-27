@@ -944,3 +944,28 @@ footer {
 .modal_main > #file {
   display: none;
 }
+
+/* 사진 업로드 이후 구혐 */
+.modal_post {
+  display: flex;
+}
+.modal_write {
+  width: 307px;
+}
+.modal_write > textarea {
+  width: 100%;
+  height: 100%;
+  padding: 20px;
+  box-sizing: border-box;
+  border: none;
+  border-left: 1px solid rgb(115, 115, 115);
+  border-bottom-right-radius: 20px;
+  outline: none;
+}
+.modal_card.write-post {
+  width: auto;
+  height: auto;
+}
+.modal_main.write-post {
+  height: auto;
+}
